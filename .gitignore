@@ -2,6 +2,9 @@
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
+out/production/*
+**/out/*
+
 ### STS ###
 .apt_generated
 .classpath
@@ -23,7 +26,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-
-**/out/
 
 src/main/java/com/engimaorg/learning/rest/SampleRestClass.java
