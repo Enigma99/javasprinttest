@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan("com.engimaorg.learning.rest")
 @EnableAutoConfiguration
-@ComponentScan
 public class LinkedInLearningFullStackAppAngularSpringBootApplication {
 
 	public static void main(String[] args) {

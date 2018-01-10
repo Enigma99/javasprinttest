@@ -5,10 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
@@ -17,7 +14,7 @@ import java.time.LocalDate;
 public class ReservationResource {
 
     @RequestMapping(path = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<ReservationResponse> getAvailableRooms(
+    public @ResponseBody ResponseEntity<ReservationResponse> getAvailableRooms(
             @RequestParam(value = "checkin")
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
             LocalDate checkin,
@@ -29,6 +26,11 @@ public class ReservationResource {
         return new ResponseEntity<>(new ReservationResponse(), HttpStatus.OK);
 
 
+    }
+
+    @RequestMapping(path = "/", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, method = RequestMethod.GET)
+    public String hello() {
+        return "hello world";
     }
 
 }

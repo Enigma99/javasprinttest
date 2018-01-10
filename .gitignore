@@ -23,3 +23,7 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+**/out/
+
+src/main/java/com/engimaorg/learning/rest/SampleRestClass.java
